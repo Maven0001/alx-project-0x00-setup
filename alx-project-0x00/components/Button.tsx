@@ -1,25 +1,16 @@
-import { Button } from "@/interfaces";
+import { ButtonProps } from "@/interfaces";
+import React from "react";
 
-export const ButtonSm: React.FC<Button> = ({ title }) => {
+const Button: React.FC<ButtonProps> = ({ title, styles }) => {
   return (
     <div>
-      <button className="text-sm rounded-sm">Click Me</button>
+      <button
+        className={`bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all duration-200 ${styles}`}
+      >
+        {title}
+      </button>
     </div>
   );
 };
 
-export const ButtonLg: React.FC<Button> = ({ title }) => {
-  return (
-    <div>
-      <button className="text-lg rounded-lg">Click Me</button>
-    </div>
-  );
-};
-
-export const ButtonFull: React.FC<Button> = ({ title }) => {
-  return (
-    <div>
-      <button className="text-lg rounded-full">Click Me</button>
-    </div>
-  );
-};
+export default Button;
